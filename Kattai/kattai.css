@@ -103,11 +103,13 @@ label #cancel{
     opacity: 1;
     visibility: visible;
 }
-h4 {
+h2 {
+    margin-top: 5vh;
     text-align: center;
     padding-left: 15%;
     padding-right: 10%;
     width: 100vw;
+    font-weight: bold;
 }
 ul {
     text-align: justify;
