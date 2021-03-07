@@ -7,7 +7,6 @@ body {
 }
 
 #board {
-    margin-top: 7vh;
     min-height: 93vh;
 }
 
@@ -19,6 +18,7 @@ td {
 .square {
     width: 100vmin;
     height: 100vmin;
+    margin-top: 15vh;
     background-image: url('kattai.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;

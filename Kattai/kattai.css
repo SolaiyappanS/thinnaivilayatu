@@ -7,8 +7,8 @@ body {
 }
 
 #board {
-    margin-top: 7vh;
-    min-height: 93vh;
+    margin-top: 10vh;
+    min-height: 80vh;
 }
 
 td {
@@ -39,9 +39,6 @@ td {
     font-size: 10vmin;
 }
 
-#board {
-    display:contents;
-}
 #about {
     display: none;
 }

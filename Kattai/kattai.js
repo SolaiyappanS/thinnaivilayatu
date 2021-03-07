@@ -35,10 +35,15 @@ function select(i,j) {
                 document.getElementById("box"+i+j).classList =m ;
                 m="fab";
                 document.getElementById("box"+fixedi+fixedj).classList =m ;
-            } else round++;
+            }
+            else { 
+                round++; 
+                alert('இதை தேர்ந்தெடுக்க முடியாது. வேறு எதையும் தேர்ந்தெடுக்கவும்.\nCannot select this. Select any other key.');
+            }
             fixedi=4; fixedj=4; move =true; 
             checkFilled();
         }
+        else alert('இதை தேர்ந்தெடுக்க முடியாது. வேறு எதையும் தேர்ந்தெடுக்கவும்.\nCannot select this. Select any other key.');
     }
 }
 
@@ -81,8 +86,8 @@ function reset() {
 
 function end(){
     switch(win) {
-        case 1 : {alert("Player 1 Wins."); reset();} break;
-        case 2 : {alert("Player 2 Wins."); reset();}
+        case 1 : {alert("முதலாம் ஆட்டக்காரர் வெற்றி பெற்று விட்டார்.\nPlayer 1 Wins."); reset();} break;
+        case 2 : {alert("இரண்டாம் ஆட்டக்காரர் வெற்றி பெற்று விட்டார்.\nPlayer 2 Wins."); reset();}
     }
 }
 let homei = true;

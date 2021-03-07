@@ -10,11 +10,10 @@ body {
 #board {
     max-width: 45vw;
     margin-top: 10vh;
-    margin-right: 20vw;
     height:auto;
     font-size: 4vw;
     color: oldlace;
-    background-color: sienna;
+    background-color: saddlebrown;
 }
 
 #about {
@@ -32,6 +31,7 @@ ul{
 
 .kuli1 {
     display: block;
+    background-color: #0004;
 }
 
 .kuli1 span, .kuli2 span {
@@ -60,7 +60,7 @@ ul{
 
 #play2 .kuli3 {
     background-color: #fff7;
-    color: darkred;
+    color: brown;
 }
 
 .blocks{
@@ -155,12 +155,9 @@ label #cancel{
 }
 
 #playbutton {
-    position: fixed;
-    top: 37vh;
-    right: 20vw;
     cursor: pointer;
-    margin: 1vw;
-    font-size: 10vw;
+    font-size: 3vw;
+    margin-bottom: 1vw;
 }
 
 #back {
