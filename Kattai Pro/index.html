@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+        <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+        <title>Kattai Vilaiyaatu Pro</title>
+        <link rel="stylesheet" href="kattai.css">
+    </head>
+    <body>
+        <center>
+            <div id="board" class="board">
+                <div class="square" >
+                    <table>
+                        <tr>
+                            <td onclick="select(0,0);"><i id="box00" class="fab"></i></td>
+                            <td onclick="select(0,1);"><i id="box01" class="fab"></i></td>
+                            <td onclick="select(0,2);"><i id="box02" class="fab"></i></td>
+                            <td onclick="select(0,3);"><i id="box03" class="fab"></i></td>
+                        </tr>
+                        <tr>
+                            <td onclick="select(1,0);"><i id="box10" class="fab"></i></td>
+                            <td onclick="select(1,1);"><i id="box11" class="fab"></i></td>
+                            <td onclick="select(1,2);"><i id="box12" class="fab"></i></td>
+                            <td onclick="select(1,3);"><i id="box13" class="fab"></i></td>
+                        </tr>
+                        <tr>
+                            <td onclick="select(2,0);"><i id="box20" class="fab"></i></td>
+                            <td onclick="select(2,1);"><i id="box21" class="fab"></i></td>
+                            <td onclick="select(2,2);"><i id="box22" class="fab"></i></td>
+                            <td onclick="select(2,3);"><i id="box23" class="fab"></i></td>
+                        </tr>
+                        <tr>
+                            <td onclick="select(3,0);"><i id="box30" class="fab"></i></td>
+                            <td onclick="select(3,1);"><i id="box31" class="fab"></i></td>
+                            <td onclick="select(3,2);"><i id="box32" class="fab"></i></td>
+                            <td onclick="select(3,3);"><i id="box33" class="fab"></i></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </center>
+        <div id = "about">
+            <br><h4>About - பற்றி</h4>
+            <br><br>
+            <ul>
+                <li>கட்ட விளையாட்டிற்கு தங்களை அன்புடன் வரவேற்கிறோம்<br>
+                    Welcome to katta vilayattu. Happy playing.</li>
+                <li>இந்த விளையாட்டை இருவர் மட்டுமே விளையாட இயலும்.<br>
+                    Only two players can play this game.</li>
+                <li>முதலாம் ஆட்டக்காரர் பதினாறு புள்ளியில் ஏதேனும் ஒன்றை தேர்வு செய்வதன் முலம் ஆட்டத்தை தொடங்கலாம்.<br>
+                    To begin the game player 1 should choose a point.</li>
+                <li>அடுத்தது இரண்டாம் ஆட்டக்காரர் மீதம் இருக்கும் புள்ளியில் ஏதேனும் ஒன்றை தேர்வு செய்ய வேண்டும்.<br>
+                    After the first move, player 2 should choose any one point. </li>
+                <li>இதே போல் இருவரும் ஆட்டத்தை தொடரவேண்டும்.<br>
+                    The game should be continued by the players by choosing remaining points. </li>
+                <li>ஒவ்வொரு ஆட்டக்காரரிடமும் 4 காய்கள் இருக்கும்.<br>
+                    Each player will have 4 coins which belongs to him.</li>
+                <li>ஏதேனும் ஒரு ஆட்டக்காரரின் 4 காய்களும்  நேர்கோட்டில் வந்துவிட்டால், அவர் வெற்றி பெற்றுவிட்டார்.<br>
+                    If a player's kept his 4 coins in a straight line, then he is the winner.</li>
+                <li>ஒருவர் வெற்றிபெற மூன்று காய்களும் ஒரேகோட்டில் இருக்க வேண்டும், அது நேர்கோடாகவும் இருக்கலாம் அல்லது குறுக்கு கோடாகவும் இருக்கலாம்.<br>
+                    The coins should be straight to win the game, whether in a straight line or in a cross line.</li>
+            </ul>
+        </div>
+        <a href="../index.html"><i id="back" class="fas fa-arrow-left"></i></a>
+        <input type="checkbox" id="check" onclick="home();">
+        <label for= "check">
+            <i class="fas fa-times" id="cancel"></i>
+            <i class="fas fa-bars" id="btn"></i>
+        </label>
+    </body>
+    <script src="kattai.js"></script>
+</html>

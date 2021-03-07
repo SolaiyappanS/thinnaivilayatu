@@ -1,0 +1,167 @@
+body {
+    margin-top: 2vw;
+    background-color: oldlace;
+    color: sienna;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#board {
+    max-width: 45vw;
+    height:auto;
+    font-size: 4vw;
+    border: 0.5vw solid sienna;
+    background-color: saddlebrown;
+    color: oldlace;
+}
+
+#about {
+    display: none;
+}
+
+ul{
+    margin-top: 5vw;
+    text-align: justify;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.kuli1 {
+    display: block;
+    background-color: peru;
+    border: 1vw solid saddlebrown;
+    border-radius: 2vw;
+}
+
+.kuli1 span, .kuli2 span {
+    width:7vw;
+    margin-bottom: 1vw;
+    margin-top: 1vw;
+}
+
+.kuli1 p, .kuli2 p {
+    display: inline-block;
+    width: 24vw;
+    border-radius: 5vw;
+    height: 7vw;
+    border: 2px solid oldlace;
+}
+
+.kuli2 {
+    display: block;
+    background-color: chocolate;
+    border: 1vw solid saddlebrown;
+    border-radius: 2vw;
+}
+
+#play1 .kuli3 {
+    background-color: #fffa;
+    color: peru;
+}
+
+#play2 .kuli3 {
+    background-color: #fffa;
+    color: chocolate;
+}
+
+.blocks{
+    background-color: #777;
+    color: #ccc;
+}
+
+#board span {
+    border-radius: 50%;
+    display: inline-block;
+    height: 7vw;
+    cursor: pointer;
+    border: 2px solid oldlace;
+}
+
+center #board a {
+    display: inline-block;
+    height: auto;
+}
+
+.previousv {
+    background-color: saddlebrown;
+}
+
+.currentv {
+    background-color: sienna;
+}
+
+.fas {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#check{
+display: none;
+}
+
+label #btn,label #cancel{
+position: fixed;
+top: 19vw;
+left: 8vw;
+cursor: pointer;
+color: sienna;
+margin: 1vw;
+font-size: 10vw;
+}
+label #cancel{
+opacity: 0;
+visibility: hidden;
+}
+#check:checked ~ label #btn{
+margin-left: 1vw;
+opacity: 0;
+visibility: hidden;
+}
+#check:checked ~ label #cancel{
+margin-left: 1vw;
+left: 5vw;
+top: 5vw;
+opacity: 1;
+font-size: 5vw;
+visibility: visible;
+position: relative;
+}
+
+#check:checked ~ #playbutton{
+    visibility: hidden;
+}
+
+#playbutton {
+    position: fixed;
+    top: 18vw;
+    right: 8vw;
+    cursor: pointer;
+    margin: 1vw;
+    font-size: 10vw;
+}
+
+#back {
+    position: fixed;
+    top: 10px;
+    left: 5px;
+    cursor: pointer;
+    color: #aaa;
+    border-radius: 5px;
+    margin: 15px 30px;
+    font-size: 29px;
+    background-color: #fff;
+    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+        inset -7px -7px 10px 0px rgba(0,0,0,.1),
+    3.5px 3.5px 20px 0px rgba(0,0,0,.1),
+    2px 2px 5px 0px rgba(0,0,0,.1);
+    height: 45px;
+    width: 45px;
+    text-align: center;
+    text-shadow: 2px 2px 3px rgba(255,255,255,0.5);
+    line-height: 45px;
+    transition: 250ms;
+}
+
+h4 {
+    text-align: center;
+    font-size: 5vw;
+}
