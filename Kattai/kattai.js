@@ -106,7 +106,7 @@ function home() {
 function tempAlert(msg)
 {
  var el = document.createElement("div");
- el.setAttribute("style","position:absolute;top:40%;left:25%;width:50vw; background-color:brown; font-size:larger;");
+ el.setAttribute("style","position:absolute;top:40%;left:25%;width:50vw; background-color:brown; font-size:larger; text-align: center;");
  el.innerHTML = msg;
  setTimeout(function(){
   el.parentNode.removeChild(el);
