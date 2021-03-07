@@ -8,8 +8,9 @@ ul {
     text-align: justify;
     padding-left: 15%;
     padding-right: 10%;
+    font-weight: bold;
     font-size: larger;
-    color: antiquewhite;
+    color: white;
 }
 * {
     margin: 0;
@@ -17,14 +18,15 @@ ul {
     text-decoration: none;
 }
 body {
-    color: antiquewhite;
+    color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 100vw;
-    background-image: linear-gradient(to left, var(--accent-color-bg), var(--gradient-color-bg));
-    --accent-color-bg: saddlebrown;
-    --gradient-color-bg: brown;
+    background: url(myWallpaper.png);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-attachment: fixed;
 }
 .games {
     padding-left: 20%;
@@ -36,16 +38,16 @@ body {
 .games a {
     font-size:100px;
     height: 150px;
-    color:antiquewhite;
-    background: #fff5;
+    color:white;
+    background: #fff2;
     width: 150px;
     display: inline-block;
     border-radius: 40%;
     transition: 250ms;
 }
 .games a:hover {
-    color: var(--accent-color-bg);
-    background: antiquewhite;
+    color: darkred;
+    background: white;
     transition: 250ms;
     text-decoration: none;
 }
@@ -63,7 +65,7 @@ label #btn,label #cancel{
     top: 10px;
     left: 5px;
     cursor: pointer;
-    color: #aaa;
+    color: sienna;
     border-radius: 5px;
     margin: 15px 30px;
     font-size: 29px;
