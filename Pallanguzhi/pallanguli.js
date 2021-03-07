@@ -66,8 +66,8 @@ function start() {
             else p1turn = false;
             canPress = true;
             document.getElementById("playbutton").classList = "fas fa-info-circle";
-            if(p1turn) alert("இது முதலாம் ஆட்டக்காரரின் முறை. பூஜ்ஜியமற்ற குழியைத் தேர்ந்தெடுக்கவும்.\nIt's player 1's turn. Select any one non zero hole.");
-            else alert("இது இரண்டாம் ஆட்டக்காரரின் முறை. பூஜ்ஜியமற்ற குழியைத் தேர்ந்தெடுக்கவும்.\nIt's player 2's turn. Select any one non zero hole.");
+            if(p1turn) tempAlert("இது முதலாம் ஆட்டக்காரரின் முறை. பூஜ்ஜியமற்ற குழியைத் தேர்ந்தெடுக்கவும்.\nIt's player 1's turn. Select any one non zero hole.");
+            else tempAlert("இது இரண்டாம் ஆட்டக்காரரின் முறை. பூஜ்ஜியமற்ற குழியைத் தேர்ந்தெடுக்கவும்.\nIt's player 2's turn. Select any one non zero hole.");
         } else {gameOver();}
     }
     else if(!canPress) nextTurn();
@@ -75,8 +75,8 @@ function start() {
 }
 
 function gameOver() {
-    if(p1Amount>p2Amount) alert("ஆட்டம் முடிந்தது. முதலாம் ஆட்டக்காரர் வெற்றி பெற்றுவிட்டார். Game Over. Player 1 Wins.");
-        else alert("ஆட்டம் முடிந்தது. இரண்டாம் ஆட்டக்காரர் வெற்றி பெற்றுவிட்டார். Game Over. Player 2 Wins.");  reset();
+    if(p1Amount>p2Amount) tempAlert("ஆட்டம் முடிந்தது. முதலாம் ஆட்டக்காரர் வெற்றி பெற்றுவிட்டார். Game Over. Player 1 Wins.");
+        else tempAlert("ஆட்டம் முடிந்தது. இரண்டாம் ஆட்டக்காரர் வெற்றி பெற்றுவிட்டார். Game Over. Player 2 Wins.");  reset();
 }
 
 function reset() {
@@ -88,8 +88,8 @@ function reset() {
 }
 
 function playerturn(){
-    if(p1turn) alert("இது முதலாம் ஆட்டக்காரரின் முறை. பூஜ்ஜியமற்ற குழியைத் தேர்ந்தெடுக்கவும்.\nIt's player 1's turn. Select any one non zero hole.");
-    else alert("இது இரண்டாம் ஆட்டக்காரரின் முறை. பூஜ்ஜியமற்ற குழியைத் தேர்ந்தெடுக்கவும்.\nIt's player 2's turn. Select any one non zero hole.");
+    if(p1turn) tempAlert("இது முதலாம் ஆட்டக்காரரின் முறை. பூஜ்ஜியமற்ற குழியைத் தேர்ந்தெடுக்கவும்.\nIt's player 1's turn. Select any one non zero hole.");
+    else tempAlert("இது இரண்டாம் ஆட்டக்காரரின் முறை. பூஜ்ஜியமற்ற குழியைத் தேர்ந்தெடுக்கவும்.\nIt's player 2's turn. Select any one non zero hole.");
 }
 
 function excecute(v){
@@ -145,12 +145,12 @@ function excecute(v){
 function empty(v){
     var v1= v+1;
     v1%=(14);
-    if(p1turn) {p1Amount += kuli[v1]; if(kuli[v1]!=0) alert("முதலாம் ஆட்டக்காரர், "+ kuli[v1] +" புள்ளிகளைப் பெறுகிறார்.\nPlayer 1 earns "+ kuli[v1] +" points.");
-    else alert("முதலாம் ஆட்டக்காரர் இம்முறை எந்த புள்ளிகளையும் பெறவில்லை.\nPlayer 1 earns no points in this turn.");
-    alert("இது இரண்டாம் ஆட்டக்காரரின் முறை. பூஜ்ஜியமற்ற குழியைத் தேர்ந்தெடுக்கவும்.\nIt's player 2's turn. Select any one non zero hole.");}
-    else {p2Amount += kuli[v1]; if(kuli[v1]!=0) alert("இரண்டாம் ஆட்டக்காரர், "+ kuli[v1] +" புள்ளிகளைப் பெறுகிறார்.\nPlayer 2 earns "+ kuli[v1] +" points.");
-    else alert("இரண்டாம் ஆட்டக்காரர் இம்முறை எந்த புள்ளிகளையும் பெறவில்லை.\nPlayer 2 earns no points in this turn.");
-    alert("இது முதலாம் ஆட்டக்காரரின் முறை. பூஜ்ஜியமற்ற குழியைத் தேர்ந்தெடுக்கவும்.\nIt's player 1's turn. Select any one non zero hole.");}
+    if(p1turn) {p1Amount += kuli[v1]; if(kuli[v1]!=0) tempAlert("முதலாம் ஆட்டக்காரர், "+ kuli[v1] +" புள்ளிகளைப் பெறுகிறார்.\nPlayer 1 earns "+ kuli[v1] +" points.");
+    else tempAlert("முதலாம் ஆட்டக்காரர் இம்முறை எந்த புள்ளிகளையும் பெறவில்லை.\nPlayer 1 earns no points in this turn.");
+    tempAlert("இது இரண்டாம் ஆட்டக்காரரின் முறை. பூஜ்ஜியமற்ற குழியைத் தேர்ந்தெடுக்கவும்.\nIt's player 2's turn. Select any one non zero hole.");}
+    else {p2Amount += kuli[v1]; if(kuli[v1]!=0) tempAlert("இரண்டாம் ஆட்டக்காரர், "+ kuli[v1] +" புள்ளிகளைப் பெறுகிறார்.\nPlayer 2 earns "+ kuli[v1] +" points.");
+    else tempAlert("இரண்டாம் ஆட்டக்காரர் இம்முறை எந்த புள்ளிகளையும் பெறவில்லை.\nPlayer 2 earns no points in this turn.");
+    tempAlert("இது முதலாம் ஆட்டக்காரரின் முறை. பூஜ்ஜியமற்ற குழியைத் தேர்ந்தெடுக்கவும்.\nIt's player 1's turn. Select any one non zero hole.");}
     kuli[v1] = 0;
     p1turn = !p1turn;
     canPress = true;
@@ -170,12 +170,23 @@ function nextTurn(){
 }
 }
 
+function tempAlert(msg)
+{
+ var el = document.createElement("div");
+ el.setAttribute("style","position:absolute;top:40%;left:25%;width:50vw; background-color:brown; font-size:larger;");
+ el.innerHTML = msg;
+ setTimeout(function(){
+  el.parentNode.removeChild(el);
+ },2500);
+ document.body.appendChild(el);
+}
+
 function pasu(){
     var i = 0;
     for(i=0 ; i<14 ; i++) { //Checking for Pasu
         if(kuli[i]==4){
-            if(i<7) {p1Amount += 4; alert("முதலாம் ஆட்டக்காரர் ஒரு பசுவைப் பெறுகிறார்.\nPlayer 1 earns a Pasu.");}
-            else {p2Amount += 4; alert("இரண்டாம் ஆட்டக்காரர் ஒரு பசுவைப் பெறுகிறார்.\nPlayer 2 earns a Pasu.");}
+            if(i<7) {p1Amount += 4; tempAlert("முதலாம் ஆட்டக்காரர் ஒரு பசுவைப் பெறுகிறார்.\nPlayer 1 earns a Pasu.");}
+            else {p2Amount += 4; tempAlert("இரண்டாம் ஆட்டக்காரர் ஒரு பசுவைப் பெறுகிறார்.\nPlayer 2 earns a Pasu.");}
             kuli[i]=0;
         }
     }
@@ -190,11 +201,11 @@ function select(v) {
                 previousv = currentv;
                 excecute(v);
             }
-            else if(document.getElementById("kuli"+(v+1)).classList == "blocks") alert("தடுக்கப்பட்ட குழியை தேர்வு செய்ய இயலாது. வேறு ஏதேனும் குழியை தேர்வு செய்யவும்.\nCan't select a blocked hole. Select any other hole.");
-            else alert("பூஜ்யம் உள்ள குழியை தேர்வு செய்ய இயலாது. வேறு ஏதேனும் குழியை தேர்வு செய்யவும்.\nCan't select zero. Select any other hole.");
+            else if(document.getElementById("kuli"+(v+1)).classList == "blocks") tempAlert("தடுக்கப்பட்ட குழியை தேர்வு செய்ய இயலாது. வேறு ஏதேனும் குழியை தேர்வு செய்யவும்.\nCan't select a blocked hole. Select any other hole.");
+            else tempAlert("பூஜ்யம் உள்ள குழியை தேர்வு செய்ய இயலாது. வேறு ஏதேனும் குழியை தேர்வு செய்யவும்.\nCan't select zero. Select any other hole.");
         }
-        else if(p1turn) alert("இது முதலாம் ஆட்டக்காரரின் முறை.\nIt's Player 1's turn.");
-        else alert("இது இரண்டாம் ஆட்டக்காரரின் முறை.\nIt's Player 2's turn.")
+        else if(p1turn) tempAlert("இது முதலாம் ஆட்டக்காரரின் முறை.\nIt's Player 1's turn.");
+        else tempAlert("இது இரண்டாம் ஆட்டக்காரரின் முறை.\nIt's Player 2's turn.")
     }
 }
 

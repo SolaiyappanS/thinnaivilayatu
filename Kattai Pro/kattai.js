@@ -34,13 +34,13 @@ function select(i,j) {
                 m="fab";
                 document.getElementById("box"+fixedi+fixedj).classList =m ;
             } else {
-                alert('இதை தேர்ந்தெடுக்க முடியாது. வேறு எதையும் தேர்ந்தெடுக்கவும்.\nCannot select this. Select any other key.');
+                tempAlert('இதை தேர்ந்தெடுக்க முடியாது. வேறு எதையும் தேர்ந்தெடுக்கவும்.\nCannot select this. Select any other key.');
                 round++;
             }
             fixedi=4; fixedj=4; move =true; 
             checkFilled();
         }
-        else alert('இதை தேர்ந்தெடுக்க முடியாது. வேறு எதையும் தேர்ந்தெடுக்கவும்.\nCannot select this. Select any other key.');
+        else tempAlert('இதை தேர்ந்தெடுக்க முடியாது. வேறு எதையும் தேர்ந்தெடுக்கவும்.\nCannot select this. Select any other key.');
     }
 }
 
@@ -94,8 +94,8 @@ function reset() {
 
 function end(){
     switch(win) {
-        case 1 : {alert("முதலாம் ஆட்டக்காரர் வெற்றி பெற்று விட்டார்.\nPlayer 1 Wins."); reset();} break;
-        case 2 : {alert("இரண்டாம் ஆட்டக்காரர் வெற்றி பெற்று விட்டார்.\nPlayer 2 Wins."); reset();}
+        case 1 : {tempAlert("முதலாம் ஆட்டக்காரர் வெற்றி பெற்று விட்டார்.\nPlayer 1 Wins."); reset();} break;
+        case 2 : {tempAlert("இரண்டாம் ஆட்டக்காரர் வெற்றி பெற்று விட்டார்.\nPlayer 2 Wins."); reset();}
     }
 }
 
@@ -110,4 +110,15 @@ function home() {
         document.getElementById("board").style.display = "none";
         document.getElementById("about").style.display = "contents";
     }
+}
+
+function tempAlert(msg)
+{
+ var el = document.createElement("div");
+ el.setAttribute("style","position:absolute;top:40%;left:25%;width:50vw; background-color:brown; font-size:larger;");
+ el.innerHTML = msg;
+ setTimeout(function(){
+  el.parentNode.removeChild(el);
+ },2500);
+ document.body.appendChild(el);
 }
