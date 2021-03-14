@@ -7,13 +7,34 @@ body {
     color: white;
 }
 
+table {
+    background: url(board.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
 #board {
     max-width: 45vw;
-    margin-top: 10vh;
     height:auto;
     font-size: 4vw;
     color: oldlace;
-    background-color: saddlebrown;
+    border: 0.5vw solid saddlebrown;
+}
+
+.msgboard {
+    width:15vw;
+    font-size: 1.5vw;
+    color: oldlace;
+    background-color: #0004;
+    border: 0.5vw solid saddlebrown;
+}
+
+#msgbox {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    padding-left: 1vw;
+    padding-right: 1vw;
 }
 
 #about {
@@ -31,7 +52,8 @@ ul{
 
 .kuli1 {
     display: block;
-    background-color: #0004;
+    background-color: #1004;
+    border: 0.5vw solid saddlebrown;
 }
 
 .kuli1 span, .kuli2 span {
@@ -43,14 +65,16 @@ ul{
 .kuli1 p, .kuli2 p {
     display: inline-block;
     width: 24vw;
+    background-color: #0004;
     border-radius: 5vw;
     height: 7vw;
-    border: 2px solid oldlace;
+    border: 2px solid darksalmon;
 }
 
 .kuli2 {
     display: block;
-    background-color: #0004;
+    background-color: #0114;
+    border: 0.5vw solid saddlebrown;
 }
 
 #play1 .kuli3 {
@@ -73,7 +97,7 @@ ul{
     display: inline-block;
     height: 7vw;
     cursor: pointer;
-    border: 2px solid oldlace;
+    border: 2px solid darksalmon;
 }
 
 center #board a {
@@ -156,7 +180,7 @@ label #cancel{
 
 #playbutton {
     cursor: pointer;
-    font-size: 3vw;
+    font-size: 5vw;
     margin-bottom: 1vw;
 }
 

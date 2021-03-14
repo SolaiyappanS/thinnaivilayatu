@@ -146,11 +146,9 @@ function empty(v){
     var v1= v+1;
     v1%=(14);
     if(p1turn) {p1Amount += kuli[v1]; if(kuli[v1]!=0) tempAlert("முதலாம் ஆட்டக்காரர், "+ kuli[v1] +" புள்ளிகளைப் பெறுகிறார்.\nPlayer 1 earns "+ kuli[v1] +" points.");
-    else tempAlert("முதலாம் ஆட்டக்காரர் இம்முறை எந்த புள்ளிகளையும் பெறவில்லை.\nPlayer 1 earns no points in this turn.");
-    tempAlert("இது இரண்டாம் ஆட்டக்காரரின் முறை. பூஜ்ஜியமற்ற குழியைத் தேர்ந்தெடுக்கவும்.\nIt's player 2's turn. Select any one non zero hole.");}
+    else tempAlert("முதலாம் ஆட்டக்காரர் இம்முறை எந்த புள்ளிகளையும் பெறவில்லை.\nPlayer 1 earns no points in this turn.");}
     else {p2Amount += kuli[v1]; if(kuli[v1]!=0) tempAlert("இரண்டாம் ஆட்டக்காரர், "+ kuli[v1] +" புள்ளிகளைப் பெறுகிறார்.\nPlayer 2 earns "+ kuli[v1] +" points.");
-    else tempAlert("இரண்டாம் ஆட்டக்காரர் இம்முறை எந்த புள்ளிகளையும் பெறவில்லை.\nPlayer 2 earns no points in this turn.");
-    tempAlert("இது முதலாம் ஆட்டக்காரரின் முறை. பூஜ்ஜியமற்ற குழியைத் தேர்ந்தெடுக்கவும்.\nIt's player 1's turn. Select any one non zero hole.");}
+    else tempAlert("இரண்டாம் ஆட்டக்காரர் இம்முறை எந்த புள்ளிகளையும் பெறவில்லை.\nPlayer 2 earns no points in this turn.");}
     kuli[v1] = 0;
     p1turn = !p1turn;
     canPress = true;
@@ -170,15 +168,17 @@ function nextTurn(){
 }
 }
 
-function tempAlert(msg)
-{
- var el = document.createElement("div");
- el.setAttribute("style","position:absolute;top:40%;left:25%;width:50vw; background-color:darkred; font-size:larger; text-align: center;");
- el.innerHTML = msg;
- setTimeout(function(){
-  el.parentNode.removeChild(el);
- },2500);
- document.body.appendChild(el);
+function tempAlert(msg) {
+    document.getElementById("msgbox").innerHTML=msg;
+}
+function boxAlert(msg){
+    var el = document.createElement("div");
+    el.setAttribute("style","position:absolute;top:40%;left:25%;width:50vw; background-color:darkred; font-size:larger; text-align: center;");
+    el.innerHTML = msg;
+    setTimeout(function(){
+    el.parentNode.removeChild(el);
+    },2500);
+    document.body.appendChild(el);
 }
 
 function pasu(){
