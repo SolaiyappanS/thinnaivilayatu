@@ -239,12 +239,12 @@ function addAll(){
 
 function game(){
     if(!homei){
-        document.getElementById("board").style.display = "block";
+        document.getElementById("home").style.display = "table";
         document.getElementById("playbutton").style.display = "block";
         document.getElementById("about").style.display = "none";
     }
     else {
-        document.getElementById("board").style.display = "none";
+        document.getElementById("home").style.display = "none";
         document.getElementById("playbutton").style.display = "none";
         document.getElementById("about").style.display = "contents";
     }

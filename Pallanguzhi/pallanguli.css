@@ -30,7 +30,7 @@ table {
 }
 
 #msgbox {
-    display: inline-block;
+    display:inline-block;
     vertical-align: middle;
     text-align: center;
     padding-left: 1vw;
