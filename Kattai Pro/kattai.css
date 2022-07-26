@@ -1,123 +1,123 @@
 body {
-    background: url(../myWallpaper.png);
+  /* background: url(../myWallpaper.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: auto;
-    color: white;
+    background-size: auto; */
+  background-color: chocolate;
+  color: white;
 }
 
 #board {
-    min-height: 93vh;
+  min-height: 93vh;
 }
 
 td {
-    height: 25vmin;
-    width: 25vmin;
-    text-align: center;
+  height: 25vmin;
+  width: 25vmin;
+  text-align: center;
 }
 .square {
-    width: 100vmin;
-    height: 100vmin;
-    margin-top: 15vh;
-    background-image: url('kattai.png');
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
+  width: 100vmin;
+  height: 100vmin;
+  margin-top: 15vh;
+  background-image: url("kattai.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 .fab {
-    visibility: hidden;
+  visibility: hidden;
 }
 .fas {
-    color: sienna;
-    background-color: white;
-    border-radius: 50%;
-    font-size: 10vmin;
+  color: sienna;
+  background-color: white;
+  border-radius: 50%;
+  font-size: 10vmin;
 }
 .far {
-    color: white;
-    background-color: darkred;
-    border-radius: 50%;
-    font-size: 10vmin;
+  color: white;
+  background-color: darkred;
+  border-radius: 50%;
+  font-size: 10vmin;
 }
 
 #board {
-    display:contents;
+  display: contents;
 }
 #about {
-    display: none;
+  display: none;
 }
-#check{
-    display: none;
+#check {
+  display: none;
 }
-label #btn,label #cancel{
-    position: fixed;
-    top: 10px;
-    left: 5px;
-    cursor: pointer;
-    color: sienna;
-    border-radius: 5px;
-    margin: 15px 30px;
-    font-size: 29px;
-    background-color: #fff;
-    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
-        inset -7px -7px 10px 0px rgba(0,0,0,.1),
-    3.5px 3.5px 20px 0px rgba(0,0,0,.1),
-    2px 2px 5px 0px rgba(0,0,0,.1);
-    height: 45px;
-    width: 45px;
-    text-align: center;
-    text-shadow: 2px 2px 3px rgba(255,255,255,0.5);
-    line-height: 45px;
-    transition: 250ms;
+label #btn,
+label #cancel {
+  position: fixed;
+  top: 10px;
+  left: 5px;
+  cursor: pointer;
+  color: sienna;
+  border-radius: 5px;
+  margin: 15px 30px;
+  font-size: 29px;
+  background-color: #fff;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    inset -7px -7px 10px 0px rgba(0, 0, 0, 0.1),
+    3.5px 3.5px 20px 0px rgba(0, 0, 0, 0.1), 2px 2px 5px 0px rgba(0, 0, 0, 0.1);
+  height: 45px;
+  width: 45px;
+  text-align: center;
+  text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
+  line-height: 45px;
+  transition: 250ms;
 }
 #back {
-    position: fixed;
-    top: 70px;
-    left: 5px;
-    cursor: pointer;
-    color: sienna;
-    border-radius: 5px;
-    margin: 15px 30px;
-    font-size: 29px;
-    background-color: #fff;
-    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
-        inset -7px -7px 10px 0px rgba(0,0,0,.1),
-    3.5px 3.5px 20px 0px rgba(0,0,0,.1),
-    2px 2px 5px 0px rgba(0,0,0,.1);
-    height: 45px;
-    width: 45px;
-    text-align: center;
-    text-shadow: 2px 2px 3px rgba(255,255,255,0.5);
-    line-height: 45px;
-    transition: 250ms;
+  position: fixed;
+  top: 70px;
+  left: 5px;
+  cursor: pointer;
+  color: sienna;
+  border-radius: 5px;
+  margin: 15px 30px;
+  font-size: 29px;
+  background-color: #fff;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    inset -7px -7px 10px 0px rgba(0, 0, 0, 0.1),
+    3.5px 3.5px 20px 0px rgba(0, 0, 0, 0.1), 2px 2px 5px 0px rgba(0, 0, 0, 0.1);
+  height: 45px;
+  width: 45px;
+  text-align: center;
+  text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
+  line-height: 45px;
+  transition: 250ms;
 }
-label #cancel{
-    opacity: 0;
-    visibility: hidden;
+label #cancel {
+  opacity: 0;
+  visibility: hidden;
 }
-#check:checked ~ .sidebar{
-    left: 0;
-    top: 0;
+#check:checked ~ .sidebar {
+  left: 0;
+  top: 0;
 }
-#check:checked ~ label #btn{
-    opacity: 0;
-    visibility: hidden;
+#check:checked ~ label #btn {
+  opacity: 0;
+  visibility: hidden;
 }
-#check:checked ~ label #cancel{
-    opacity: 1;
-    visibility: visible;
+#check:checked ~ label #cancel {
+  opacity: 1;
+  visibility: visible;
 }
 h2 {
-    margin-top: 5vh;
-    text-align: center;
-    padding-left: 15%;
-    padding-right: 10%;
-    width: 100vw;
-    font-weight: bold;
+  margin-top: 5vh;
+  text-align: center;
+  padding-left: 15%;
+  padding-right: 10%;
+  width: 100vw;
+  font-weight: bold;
 }
 ul {
-    text-align: justify;
-    padding-left: 15%;
-    padding-right: 10%;
-    font-weight: bold;
-    font-size: larger;
+  text-align: justify;
+  padding-left: 15%;
+  padding-right: 10%;
+  font-weight: bold;
+  font-size: larger;
 }

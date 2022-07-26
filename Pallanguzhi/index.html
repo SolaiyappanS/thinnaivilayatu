@@ -1,101 +1,182 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-        <link rel="stylesheet" href="pallanguli.css">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="pallanguli.css" />
 
-        <title>Pallanguzhi - பல்லாங்குழி</title>
-    </head>
-    <body>
-        <center>
-            <table id = "home">
-                <tr style="background-color: #0004; border: 0.5vw solid saddlebrown;">
-                    <td id = "board" rowspan="4">
-                        <div id="play1" class="kuli1">
-                            <span id ="kuli2" onclick="select(1);">0</span>
-                            <span id ="kuli3" onclick="select(2);">0</span>
-                            <span id ="kuli4" onclick="select(3);">0</span>
-                            <span id ="kuli5" onclick="select(4);">0</span>
-                            <span id ="kuli6" onclick="select(5);">0</span><br>
-                            <span id ="kuli1" onclick="select(0);">0</span>
-                            <p id ="kuli15">0</p>
-                            <span id ="kuli7" onclick="select(6);">0</span>
-                        </div>
-                        <div id="play2" class="kuli2">
-                            <span id ="kuli14" onclick="select(13);">0</span>
-                            <p id ="kuli16">0</p>
-                            <span id ="kuli8" onclick="select(7);">0</span><br>
-                            <span id ="kuli13" onclick="select(12);">0</span>
-                            <span id ="kuli12" onclick="select(11);">0</span>
-                            <span id ="kuli11" onclick="select(10);">0</span>
-                            <span id ="kuli10" onclick="select(9);">0</span>
-                            <span id ="kuli9" onclick="select(8);">0</span>
-                        </div>
-                    </td>
-                    <td class = "msgboard" style=" height: 3vw;">
-                        <P style="font-size: 1.5vw;">Message Box</P>
-                    </td>
-                </tr>
-                <tr style="background-color: #0004; border: 0.5vw solid saddlebrown;">
-                    <td class = "msgboard">
-                        <div id ="msgbox">Pallanguzhi<br>பல்லாங்குழி</div>
-                    </td>
-                </tr>
-                <tr style="background-color: #0004; border: 0.5vw solid saddlebrown; height: 3vw;">
-                    <td class = "msgboard">
-                        <P style="font-size: 1.5vw;">Play Button</P>
-                    </td>
-                </tr>
-                <tr style="background-color: #0004; border: 0.5vw solid saddlebrown; height: 10vw;">
-                    <td class = "msgboard">
-                        <a onclick="start()"><i id="playbutton" class="fas fa-play"></i></a>
-                    </td>
-                </tr>
-            </table>
-            
-        </center>
+    <title>Pallanguzhi - பல்லாங்குழி</title>
+  </head>
+  <body>
+    <center>
+      <table id="home">
+        <tr style="background-color: #0004; border: 0.5vw solid saddlebrown">
+          <td id="board" rowspan="4">
+            <div id="play1" class="kuli1">
+              <span id="kuli2" onclick="select(1);">0</span>
+              <span id="kuli3" onclick="select(2);">0</span>
+              <span id="kuli4" onclick="select(3);">0</span>
+              <span id="kuli5" onclick="select(4);">0</span>
+              <span id="kuli6" onclick="select(5);">0</span><br />
+              <span id="kuli1" onclick="select(0);">0</span>
+              <p id="kuli15">0</p>
+              <span id="kuli7" onclick="select(6);">0</span>
+            </div>
+            <div id="play2" class="kuli2">
+              <span id="kuli14" onclick="select(13);">0</span>
+              <p id="kuli16">0</p>
+              <span id="kuli8" onclick="select(7);">0</span><br />
+              <span id="kuli13" onclick="select(12);">0</span>
+              <span id="kuli12" onclick="select(11);">0</span>
+              <span id="kuli11" onclick="select(10);">0</span>
+              <span id="kuli10" onclick="select(9);">0</span>
+              <span id="kuli9" onclick="select(8);">0</span>
+            </div>
+          </td>
+          <td class="msgboard" style="height: 3vw">
+            <p style="font-size: 1.5vw">Message Box</p>
+          </td>
+        </tr>
+        <tr style="background-color: #0004; border: 0.5vw solid saddlebrown">
+          <td class="msgboard">
+            <div id="msgbox">Pallanguzhi<br />பல்லாங்குழி</div>
+          </td>
+        </tr>
+        <tr
+          style="
+            background-color: #0004;
+            border: 0.5vw solid saddlebrown;
+            height: 3vw;
+          "
+        >
+          <td class="msgboard">
+            <p style="font-size: 1.5vw">Play Button</p>
+          </td>
+        </tr>
+        <tr
+          style="
+            background-color: #0004;
+            border: 0.5vw solid saddlebrown;
+            height: 10vw;
+          "
+        >
+          <td class="msgboard">
+            <a onclick="start()"><i id="playbutton" class="fas fa-play"></i></a>
+          </td>
+        </tr>
+      </table>
+    </center>
 
     <a href="../index.html"><i id="back" class="fas fa-arrow-left"></i></a>
-                  
-        <input type="checkbox" id="check" onclick="game();">
-        <label for= "check">
-            <i class="fas fa-home" id="cancel"></i>
-            <i class="fas fa-question" id="btn"></i>
-        </label>
-        <div id = "about"> <center>
-            <br><h2>About - பற்றி</h2>
-            <br><br><ul>
-                <li>சிறந்த அனுபவத்திற்கு கைபேசியை அகல வசமாக திருப்பவும். <br>
-                    Turn your mobile in LANDSCAPE MODE for better experience.</li><br>
-                <li>Play பட்டனை அழுத்துவதன் முலம் விளையாட்டை தொடங்கலாம்.  <br>
-                    You can start the game by pressing the play button.</li><br>
-                <li>முதலாமவரே முதலில் தொடங்க வேண்டும். மேலே இருக்கும் குளிகளுக்கு சொந்தக்காரர் முதலாம் ஆட்டக்காரர் ஆவார்.  <br>
-                    Player 1 should begin the game. The holes in the upper side belongs to the player 1.</li><br>
-                <li>முதலாமவர் குழியை தேர்வு செய்த அவரது ஆட்டம் முடியும்வரை பட்டனை தொடர்ந்து அழுத்த வேண்டும். <br>
-                    After choosing a hole belongs to him, player 1 should continuously press the play button until his turn ends.</li><br>
-                <li>முதலாமவர் ஆட்டம் முடிந்ததும் இறுதியில் வரும் செய்தி இரண்டாமவர் குழியை தேர்வு செய்யமாறு அறிவுறுத்தும்.  <br>
-                    Once player 1 finishes his turn then it notifies player 2 to choose a hole which belongs to him.</li><br>
-                <li>இவ்வாறு இருவரும் மாற்றி மாற்றி விளையாட வேண்டும். <br> 
-                    Repeat this procedure and continue playing.</li><br>
-                <li>ஏதேனும் ஒரு குழியில் நான்கு என்னும் எண் வந்தால் அது எவருக்கு சொந்தமான குழியில் இருக்கிறதோ அவரின் புள்ளிகளில் இணைந்து விடும். இதற்கு பசு என்று பெயர். <br>
-                    If a hole reaches the number 4 while playing, it is added as a point to the player to whom the hole belongs. It is called as 'PASU'.</li><br>
-                <li>இரண்டு ஆட்டங்களுக்கு ஒருமுறை அடுத்த சுற்றுக்கு செல்ல வேண்டும் எனில் 'OK' பட்டனை அழுத்தவும். இல்லையெனில் 'CANCEL' பட்டனை அழுத்தவும்.  <br>
-                    After completing every two rounds you can press 'OK' to move to the next round. Otherwise you can press 'CANCEL' button to end the game.</li><br>
-                <li>விளையாட்டை நடுவில் முடித்து கொள்வதன் முலம் அப்போது யாரிடம் அதிக புள்ளிகள் உள்ளதோ அவரே வெற்றியாளர் என கருதப்படுவார்.  <br>
-                    If you end the game in the middle level by pressing 'CANCEL' button then which player has higher points will be considered as winner.</li><br>
-                <li>இரண்டு ஆட்டக்காரர்களில் எவரேனும் ஒருவர் ஐந்து புள்ளிகளுக்கு கீழ் பெற்றார் எனில் அப்பொழுது தான் ஆட்டம் முழுமையாக முடிவடையும்.  <br>
-                    From the two players, when a player gets less than five points then the game will come to an end.</li><br>
-                <li>விளையாட்டிற்கு திரும்பி செல்ல மேலே உள்ள 'HOME' பட்டனை அழுத்தவும். <br>
-                    Click the home button in the top to return to the Game.</li><br>
-                <li>விளையாடியதற்கு நன்றி. <br>
-                    Thanks for playing.</li></ul>
-                    </center>
-        </div>
-          
-    </body>
-    <script src="pallanguli.js"></script>
+
+    <input type="checkbox" id="check" onclick="game();" />
+    <label for="check">
+      <i class="fas fa-home" id="cancel"></i>
+      <i class="fas fa-question" id="btn"></i>
+    </label>
+    <div id="about">
+      <center>
+        <br />
+        <h2>About - பற்றி</h2>
+        <br /><br />
+        <ul>
+          <li>
+            சிறந்த அனுபவத்திற்கு கைபேசியை அகல வசமாக திருப்பவும். <br />
+            Turn your mobile in LANDSCAPE MODE for better experience.
+          </li>
+          <br />
+          <li>
+            Play பட்டனை அழுத்துவதன் முலம் விளையாட்டை தொடங்கலாம். <br />
+            You can start the game by pressing the play button.
+          </li>
+          <br />
+          <li>
+            முதலாமவரே முதலில் தொடங்க வேண்டும். மேலே இருக்கும் குளிகளுக்கு
+            சொந்தக்காரர் முதலாம் ஆட்டக்காரர் ஆவார். <br />
+            Player 1 should begin the game. The holes in the upper side belongs
+            to the player 1.
+          </li>
+          <br />
+          <li>
+            முதலாமவர் குழியை தேர்வு செய்த அவரது ஆட்டம் முடியும்வரை பட்டனை
+            தொடர்ந்து அழுத்த வேண்டும். <br />
+            After choosing a hole belongs to him, player 1 should continuously
+            press the play button until his turn ends.
+          </li>
+          <br />
+          <li>
+            முதலாமவர் ஆட்டம் முடிந்ததும் இறுதியில் வரும் செய்தி இரண்டாமவர்
+            குழியை தேர்வு செய்யமாறு அறிவுறுத்தும். <br />
+            Once player 1 finishes his turn then it notifies player 2 to choose
+            a hole which belongs to him.
+          </li>
+          <br />
+          <li>
+            இவ்வாறு இருவரும் மாற்றி மாற்றி விளையாட வேண்டும். <br />
+            Repeat this procedure and continue playing.
+          </li>
+          <br />
+          <li>
+            ஏதேனும் ஒரு குழியில் நான்கு என்னும் எண் வந்தால் அது எவருக்கு
+            சொந்தமான குழியில் இருக்கிறதோ அவரின் புள்ளிகளில் இணைந்து விடும்.
+            இதற்கு பசு என்று பெயர். <br />
+            If a hole reaches the number 4 while playing, it is added as a point
+            to the player to whom the hole belongs. It is called as 'PASU'.
+          </li>
+          <br />
+          <li>
+            இரண்டு ஆட்டங்களுக்கு ஒருமுறை அடுத்த சுற்றுக்கு செல்ல வேண்டும் எனில்
+            'OK' பட்டனை அழுத்தவும். இல்லையெனில் 'CANCEL' பட்டனை அழுத்தவும்.
+            <br />
+            After completing every two rounds you can press 'OK' to move to the
+            next round. Otherwise you can press 'CANCEL' button to end the game.
+          </li>
+          <br />
+          <li>
+            விளையாட்டை நடுவில் முடித்து கொள்வதன் முலம் அப்போது யாரிடம் அதிக
+            புள்ளிகள் உள்ளதோ அவரே வெற்றியாளர் என கருதப்படுவார். <br />
+            If you end the game in the middle level by pressing 'CANCEL' button
+            then which player has higher points will be considered as winner.
+          </li>
+          <br />
+          <li>
+            இரண்டு ஆட்டக்காரர்களில் எவரேனும் ஒருவர் ஐந்து புள்ளிகளுக்கு கீழ்
+            பெற்றார் எனில் அப்பொழுது தான் ஆட்டம் முழுமையாக முடிவடையும். <br />
+            From the two players, when a player gets less than five points then
+            the game will come to an end.
+          </li>
+          <br />
+          <li>
+            விளையாட்டிற்கு திரும்பி செல்ல மேலே உள்ள 'HOME' பட்டனை அழுத்தவும்.
+            <br />
+            Click the home button in the top to return to the Game.
+          </li>
+          <br />
+          <li>
+            விளையாடியதற்கு நன்றி. <br />
+            Thanks for playing.
+          </li>
+        </ul>
+      </center>
+    </div>
+  </body>
+  <script src="pallanguli.js"></script>
+</html>
