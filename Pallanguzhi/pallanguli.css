@@ -1,17 +1,10 @@
 body {
   margin-top: 3vh;
-  /* background: url(../myWallpaper.png);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: auto; */
   background-color: chocolate;
   color: white;
 }
 
 table {
-  /* background: url(board.png);
-  background-repeat: no-repeat;
-  background-size: cover; */
   text-align: center;
 }
 #board {
@@ -23,7 +16,6 @@ table {
 }
 
 .msgboard {
-  width: 15vw;
   font-size: 1.5vw;
   color: oldlace;
   background-color: #0004;
