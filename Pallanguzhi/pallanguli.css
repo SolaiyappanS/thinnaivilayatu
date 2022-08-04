@@ -7,6 +7,7 @@ body {
 table {
   text-align: center;
 }
+
 #board {
   max-width: 45vw;
   height: auto;
@@ -143,15 +144,18 @@ label #cancel {
   text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
   line-height: 45px;
 }
+
 label #cancel {
   opacity: 0;
   visibility: hidden;
 }
+
 #check:checked ~ label #btn {
   margin-left: 1vw;
   opacity: 0;
   visibility: hidden;
 }
+
 #check:checked ~ label #cancel {
   position: fixed;
   top: 10px;
@@ -211,4 +215,12 @@ h2 {
   padding-right: 10%;
   width: 100vw;
   font-weight: bold;
+}
+
+#langbtn {
+  font-size: 1.5vw;
+}
+
+#langbtn:hover {
+  color: rgb(108, 53, 27);
 }

@@ -69,11 +69,13 @@ function start() {
       document.getElementById("playbutton").classList = "fas fa-info-circle";
       if (p1turn)
         tempAlert(
-          "இது முதலாம் ஆட்டக்காரரின் முறை. பூஜ்ஜியமற்ற குழியைத் தேர்ந்தெடுக்கவும்.\nIt's player 1's turn. Select any one non zero hole."
+          "இது முதலாம் ஆட்டக்காரரின் முறை. பூஜ்ஜியமற்ற குழியைத் தேர்ந்தெடுக்கவும்.",
+          "It's player 1's turn. Select any one non zero hole."
         );
       else
         tempAlert(
-          "இது இரண்டாம் ஆட்டக்காரரின் முறை. பூஜ்ஜியமற்ற குழியைத் தேர்ந்தெடுக்கவும்.\nIt's player 2's turn. Select any one non zero hole."
+          "இது இரண்டாம் ஆட்டக்காரரின் முறை. பூஜ்ஜியமற்ற குழியைத் தேர்ந்தெடுக்கவும்",
+          "It's player 2's turn. Select any one non zero hole."
         );
     } else {
       gameOver();
@@ -87,12 +89,14 @@ function start() {
 
 function gameOver() {
   if (p1Amount > p2Amount)
-    tempAlert(
-      "ஆட்டம் முடிந்தது. முதலாம் ஆட்டக்காரர் வெற்றி பெற்றுவிட்டார். Game Over. Player 1 Wins."
+    tempAlertGameOver(
+      "ஆட்டம் முடிந்தது. முதலாம் ஆட்டக்காரர் வெற்றி பெற்றுவிட்டார்.",
+      "Game Over. Player 1 Wins."
     );
   else
-    tempAlert(
-      "ஆட்டம் முடிந்தது. இரண்டாம் ஆட்டக்காரர் வெற்றி பெற்றுவிட்டார். Game Over. Player 2 Wins."
+    tempAlertGameOver(
+      "ஆட்டம் முடிந்தது. இரண்டாம் ஆட்டக்காரர் வெற்றி பெற்றுவிட்டார்.",
+      "Game Over. Player 2 Wins."
     );
   reset();
 }
@@ -108,12 +112,16 @@ function reset() {
 function playerturn() {
   if (p1turn)
     tempAlert(
-      "இது முதலாம் ஆட்டக்காரரின் முறை. பூஜ்ஜியமற்ற குழியைத் தேர்ந்தெடுக்கவும்.\nIt's player 1's turn. Select any one non zero hole."
+      "இது முதலாம் ஆட்டக்காரரின் முறை. பூஜ்ஜியமற்ற குழியைத் தேர்ந்தெடுக்கவும்.",
+      "It's player 1's turn. Select any one non zero hole."
     );
   else
     tempAlert(
-      "இது இரண்டாம் ஆட்டக்காரரின் முறை. பூஜ்ஜியமற்ற குழியைத் தேர்ந்தெடுக்கவும்.\nIt's player 2's turn. Select any one non zero hole."
+      "இது இரண்டாம் ஆட்டக்காரரின் முறை. பூஜ்ஜியமற்ற குழியைத் தேர்ந்தெடுக்கவும்.",
+      "It's player 2's turn. Select any one non zero hole."
     );
+  tempAlertGameOver("", "");
+  tempAlertPasu("", "");
 }
 
 function excecute(v) {
@@ -179,29 +187,25 @@ function empty(v) {
     p1Amount += kuli[v1];
     if (kuli[v1] != 0)
       tempAlert(
-        "முதலாம் ஆட்டக்காரர், " +
-          kuli[v1] +
-          " புள்ளிகளைப் பெறுகிறார்.\nPlayer 1 earns " +
-          kuli[v1] +
-          " points."
+        "முதலாம் ஆட்டக்காரர், " + kuli[v1] + " புள்ளிகளைப் பெறுகிறார்.",
+        "Player 1 earns " + kuli[v1] + " points."
       );
     else
       tempAlert(
-        "முதலாம் ஆட்டக்காரர் இம்முறை எந்த புள்ளிகளையும் பெறவில்லை.\nPlayer 1 earns no points in this turn."
+        "முதலாம் ஆட்டக்காரர் இம்முறை எந்த புள்ளிகளையும் பெறவில்லை.",
+        "Player 1 earns no points in this turn."
       );
   } else {
     p2Amount += kuli[v1];
     if (kuli[v1] != 0)
       tempAlert(
-        "இரண்டாம் ஆட்டக்காரர், " +
-          kuli[v1] +
-          " புள்ளிகளைப் பெறுகிறார்.\nPlayer 2 earns " +
-          kuli[v1] +
-          " points."
+        "இரண்டாம் ஆட்டக்காரர், " + kuli[v1] + " புள்ளிகளைப் பெறுகிறார்.",
+        "Player 2 earns " + kuli[v1] + " points."
       );
     else
       tempAlert(
-        "இரண்டாம் ஆட்டக்காரர் இம்முறை எந்த புள்ளிகளையும் பெறவில்லை.\nPlayer 2 earns no points in this turn."
+        "இரண்டாம் ஆட்டக்காரர் இம்முறை எந்த புள்ளிகளையும் பெறவில்லை.",
+        "Player 2 earns no points in this turn."
       );
   }
   kuli[v1] = 0;
@@ -212,52 +216,94 @@ function empty(v) {
   for (i = 7; i < 14 - p2blocks; i++)
     document.getElementById("kuli" + (i + 1)).classList = "kuli2";
   document.getElementById("playbutton").classList = "fas fa-info-circle";
+
+  pasu();
+  isEmpty();
 }
 
 function nextTurn() {
-  pasu();
-  isEmpty();
   if (begin) {
     if (kuli[currentv] != 0) excecute(currentv);
     else empty(currentv);
   }
 }
 
-function tempAlert(msg) {
-  document.getElementById("msgbox").innerHTML = msg;
+function changelang() {
+  if (document.getElementById("langbtn").innerHTML !== "Switch to English") {
+    document.getElementById("tamilMsg").style.display = "block";
+    document.getElementById("englishMsg").style.display = "none";
+    document.getElementById("tamilPasu").style.display = "block";
+    document.getElementById("englishPasu").style.display = "none";
+    document.getElementById("tamilGameOver").style.display = "block";
+    document.getElementById("englishGameOver").style.display = "none";
+    document.getElementById("langbtn").innerHTML = "Switch to English";
+    document.getElementById("titlebox").innerHTML = "பல்லாங்குழி";
+  } else {
+    document.getElementById("tamilMsg").style.display = "none";
+    document.getElementById("englishMsg").style.display = "block";
+    document.getElementById("tamilPasu").style.display = "none";
+    document.getElementById("englishPasu").style.display = "block";
+    document.getElementById("tamilGameOver").style.display = "none";
+    document.getElementById("englishGameOver").style.display = "block";
+    document.getElementById("langbtn").innerHTML = "Switch to Tamil";
+    document.getElementById("titlebox").innerHTML = "Pallanguzhi";
+  }
 }
-function boxAlert(msg) {
-  var el = document.createElement("div");
-  el.setAttribute(
-    "style",
-    "position:absolute;top:40%;left:25%;width:50vw; background-color:darkred; font-size:larger; text-align: center;"
-  );
-  el.innerHTML = msg;
-  setTimeout(function () {
-    el.parentNode.removeChild(el);
-  }, 2500);
-  document.body.appendChild(el);
+
+function tempAlert(msg1, msg2) {
+  document.getElementById("tamilMsg").innerHTML = msg1;
+  document.getElementById("englishMsg").innerHTML = msg2;
+}
+function tempAlertPasu(msg1, msg2) {
+  document.getElementById("tamilPasu").innerHTML = msg1;
+  document.getElementById("englishPasu").innerHTML = msg2;
+}
+function tempAlertGameOver(msg1, msg2) {
+  document.getElementById("tamilGameOver").innerHTML = msg1;
+  document.getElementById("englishGameOver").innerHTML = msg2;
 }
 
 function pasu() {
   var i = 0;
+  var pasuCount1 = 0;
+  var pasuCount2 = 0;
   for (i = 0; i < 14; i++) {
     //Checking for Pasu
     if (kuli[i] == 4) {
       if (i < 7) {
         p1Amount += 4;
-        tempAlert(
-          "முதலாம் ஆட்டக்காரர் ஒரு பசுவைப் பெறுகிறார்.\nPlayer 1 earns a Pasu."
-        );
+        pasuCount1 += 1;
       } else {
         p2Amount += 4;
-        tempAlert(
-          "இரண்டாம் ஆட்டக்காரர் ஒரு பசுவைப் பெறுகிறார்.\nPlayer 2 earns a Pasu."
-        );
+        pasuCount2 += 1;
       }
       kuli[i] = 0;
     }
   }
+  if (pasuCount1 > 0 && pasuCount2 == 0)
+    tempAlertPasu(
+      "முதலாம் ஆட்டக்காரர் " + pasuCount1 + " பசுக்களைப் பெறுகிறார்.",
+      "Player 1 earns " + pasuCount1 + " Pasu(s)."
+    );
+  else if (pasuCount1 == 0 && pasuCount2 > 0)
+    tempAlertPasu(
+      "இரண்டாம் ஆட்டக்காரர் " + pasuCount2 + " பசுக்களைப் பெறுகிறார்.",
+      "Player 2 earns " + pasuCount2 + " Pasu(s)."
+    );
+  else if (pasuCount1 > 0 && pasuCount2 > 0)
+    tempAlertPasu(
+      "முதலாம் ஆட்டக்காரர் " +
+        pasuCount1 +
+        " பசுக்களைப் பெறுகிறார்.\nஇரண்டாம் ஆட்டக்காரர் " +
+        pasuCount2 +
+        " பசுக்களைப் பெறுகிறார்.",
+      "Player 1 earns " +
+        pasuCount1 +
+        " Pasu(s).\nPlayer 2 earns " +
+        pasuCount2 +
+        " Pasu(s)."
+    );
+  else tempAlertPasu("", "");
 }
 
 function select(v) {
@@ -269,19 +315,28 @@ function select(v) {
         canPress = false;
         previousv = currentv;
         excecute(v);
-      } else if (
-        document.getElementById("kuli" + (v + 1)).classList == "blocks"
-      )
-        tempAlert(
-          "தடுக்கப்பட்ட குழியை தேர்வு செய்ய இயலாது. வேறு ஏதேனும் குழியை தேர்வு செய்யவும்.\nCan't select a blocked hole. Select any other hole."
-        );
+      } else {
+        if (document.getElementById("kuli" + (v + 1)).classList == "blocks")
+          tempAlert(
+            "தடுக்கப்பட்ட குழியை தேர்வு செய்ய இயலாது. வேறு ஏதேனும் குழியை தேர்வு செய்யவும்.",
+            "Can't select a blocked hole. Select any other hole."
+          );
+        else
+          tempAlert(
+            "பூஜ்யம் உள்ள குழியை தேர்வு செய்ய இயலாது. வேறு ஏதேனும் குழியை தேர்வு செய்யவும்.",
+            "Can't select zero. Select any other hole."
+          );
+      }
+      tempAlertGameOver("", "");
+      tempAlertPasu("", "");
+    } else {
+      if (p1turn)
+        tempAlert("இது முதலாம் ஆட்டக்காரரின் முறை.", "It's Player 1's turn.");
       else
-        tempAlert(
-          "பூஜ்யம் உள்ள குழியை தேர்வு செய்ய இயலாது. வேறு ஏதேனும் குழியை தேர்வு செய்யவும்.\nCan't select zero. Select any other hole."
-        );
-    } else if (p1turn)
-      tempAlert("இது முதலாம் ஆட்டக்காரரின் முறை.\nIt's Player 1's turn.");
-    else tempAlert("இது இரண்டாம் ஆட்டக்காரரின் முறை.\nIt's Player 2's turn.");
+        tempAlert("இது இரண்டாம் ஆட்டக்காரரின் முறை.", "It's Player 2's turn.");
+    }
+    tempAlertGameOver("", "");
+    tempAlertPasu("", "");
   }
 }
 
@@ -322,32 +377,18 @@ function addAll() {
   begin = false;
   document.getElementById("playbutton").classList = "fas fa-play";
   roundCount++;
-  var x = true;
-  if (roundCount % 2 == 0)
-    x = confirm(
-      "சுற்று " +
-        roundCount +
-        " முடிந்தது. சுற்று " +
-        (roundCount + 1) +
-        "க்கு OK பட்டனை அழுத்தவும். ஆட்டத்தை முடிக்க Cancel பட்டனை அழுத்தவும்.\nThe round " +
-        roundCount +
-        " is completed. Press OK button to play the round " +
-        (roundCount + 1) +
-        ". To End the game press Cancel"
-    );
-  if (x)
-    alert(
-      "சுற்று " +
-        roundCount +
-        " முடிந்தது. சுற்று " +
-        (roundCount + 1) +
-        "க்கு OK பட்டனை அழுத்தவும்.\nThe round " +
-        roundCount +
-        " is completed. Press OK button to play the round " +
-        (roundCount + 1) +
-        "."
-    );
-  else gameOver();
+  tempAlertGameOver(
+    "சுற்று " +
+      roundCount +
+      " முடிந்தது. சுற்று " +
+      (roundCount + 1) +
+      "க்கு Play பட்டனை அழுத்தவும்.",
+    "The round " +
+      roundCount +
+      " is completed. Press Play button to play the round " +
+      (roundCount + 1) +
+      "."
+  );
   for (i = 0; i < 14; i++) {
     if (i < 7) document.getElementById("kuli" + (i + 1)).classList = "kuli1";
     else document.getElementById("kuli" + (i + 1)).classList = "kuli2";
