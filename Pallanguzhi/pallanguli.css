@@ -44,9 +44,10 @@ ul {
   font-size: larger;
 }
 
-.kuli1 {
+.kuli1,
+.kuli2 {
   display: block;
-  background-color: #1004;
+  background-color: #0004;
   border: 0.5vw solid saddlebrown;
 }
 
@@ -61,36 +62,33 @@ ul {
 .kuli2 p {
   display: inline-block;
   width: 23vw;
-  background-color: #0004;
+  background-color: #0005;
   border-radius: 5vw;
   height: 7vw;
-  border: 2px solid darksalmon;
+  border: 2px solid #0000;
 }
 
-.kuli2 {
-  display: block;
-  background-color: #0114;
-  border: 0.5vw solid saddlebrown;
+#play1 {
+  background-color: #1004;
+  padding-left: 1vw;
+  padding-right: 1vw;
 }
 
-#play1,
 #play2 {
-  padding: 1vw;
+  background-color: #0114;
+  padding-left: 1vw;
+  padding-right: 1vw;
 }
 
-#play1 .kuli3 {
-  background-color: #fff7;
-  color: darkred;
-}
-
+#play1 .kuli3,
 #play2 .kuli3 {
-  background-color: #fff7;
-  color: brown;
+  background-color: #feea;
+  color: #700;
 }
 
 .blocks {
   background-color: #fff5;
-  color: #000;
+  color: #0008;
 }
 
 #board span {
@@ -98,7 +96,7 @@ ul {
   display: inline-block;
   height: 7vw;
   cursor: pointer;
-  border: 2px solid darksalmon;
+  border: 2px solid #0000;
 }
 
 center #board a {
@@ -107,11 +105,11 @@ center #board a {
 }
 
 .previousv {
-  background-color: darkred;
+  background-color: #500a;
 }
 
 .currentv {
-  background-color: brown;
+  background-color: #0206;
 }
 
 .fas {
@@ -223,4 +221,13 @@ h2 {
 
 #langbtn:hover {
   color: rgb(108, 53, 27);
+}
+
+.player {
+  font-size: 1vw;
+  margin: 0;
+}
+
+.initial {
+  background-color: #0004;
 }

@@ -10,6 +10,7 @@ var p1blocks = 0;
 var p2blocks = 0;
 var previousv = 0;
 var currentv = 0;
+var collected = true;
 var interval;
 interval = setInterval(update);
 setAll(0);
@@ -57,7 +58,36 @@ function updateVal() {
 }
 
 function start() {
-  if (!begin) {
+  if (!collected) {
+    collected = true;
+    for (i = 0; i < 7; i++) {
+      // adding elements in first row
+      p1Amount += kuli[i];
+      kuli[i] = 0;
+    }
+    for (i = 7; i < 14; i++) {
+      // adding elements in second row
+      p2Amount += kuli[i];
+      kuli[i] = 0;
+    }
+    tempAlert(
+      roundCount +
+        "வது சுற்று முடிவில் முதலாம் ஆட்டக்காரர் " +
+        p1Amount +
+        " புள்ளிகளையும், இரண்டாம் ஆட்டக்காரர் " +
+        p2Amount +
+        " புள்ளிகளையும் பெற்றுள்ளனர். அடுத்த சுற்றுக்கு play பட்டனை அழுத்தவும்",
+      "At the end of round " +
+        roundCount +
+        ", Player 1 has " +
+        p1Amount +
+        " points and Player 2 has " +
+        p2Amount +
+        " points. Press the play button to continue."
+    );
+    tempAlertGameOver("", "");
+    tempAlertPasu("", "");
+  } else if (!begin) {
     if (p1Amount >= 5 && p2Amount >= 5) {
       p1blocks = 0;
       p2blocks = 0;
@@ -67,6 +97,8 @@ function start() {
       else p1turn = false;
       canPress = true;
       document.getElementById("playbutton").classList = "fas fa-info-circle";
+      tempAlertGameOver("", "");
+      tempAlertPasu("", "");
       if (p1turn)
         tempAlert(
           "இது முதலாம் ஆட்டக்காரரின் முறை. பூஜ்ஜியமற்ற குழியைத் தேர்ந்தெடுக்கவும்.",
@@ -90,14 +122,16 @@ function start() {
 function gameOver() {
   if (p1Amount > p2Amount)
     tempAlertGameOver(
-      "ஆட்டம் முடிந்தது. முதலாம் ஆட்டக்காரர் வெற்றி பெற்றுவிட்டார்.",
-      "Game Over. Player 1 Wins."
+      "ஆட்டம் முடிந்தது. முதலாம் ஆட்டக்காரர் வெற்றி பெற்றுவிட்டார். மீண்டும் விளையாட play பட்டனை அழுத்தவும்",
+      "Game Over. Player 1 Wins. Press the play button to play again"
     );
   else
     tempAlertGameOver(
-      "ஆட்டம் முடிந்தது. இரண்டாம் ஆட்டக்காரர் வெற்றி பெற்றுவிட்டார்.",
-      "Game Over. Player 2 Wins."
+      "ஆட்டம் முடிந்தது. இரண்டாம் ஆட்டக்காரர் வெற்றி பெற்றுவிட்டார். மீண்டும் விளையாட play பட்டனை அழுத்தவும்",
+      "Game Over. Player 2 Wins. Press the play button to play again"
     );
+  tempAlert("", "");
+  tempAlertPasu("", "");
   reset();
 }
 
@@ -183,12 +217,14 @@ function excecute(v) {
 function empty(v) {
   var v1 = v + 1;
   v1 %= 14;
+  while (document.getElementById("kuli" + (v1 + 1)).classList == "blocks")
+    v1 = (v1 + 1) % 14;
   if (p1turn) {
     p1Amount += kuli[v1];
     if (kuli[v1] != 0)
       tempAlert(
         "முதலாம் ஆட்டக்காரர், " + kuli[v1] + " புள்ளிகளைப் பெறுகிறார்.",
-        "Player 1 earns " + kuli[v1] + " points."
+        "Player 1 earns " + kuli[v1] + " point(s)."
       );
     else
       tempAlert(
@@ -200,7 +236,7 @@ function empty(v) {
     if (kuli[v1] != 0)
       tempAlert(
         "இரண்டாம் ஆட்டக்காரர், " + kuli[v1] + " புள்ளிகளைப் பெறுகிறார்.",
-        "Player 2 earns " + kuli[v1] + " points."
+        "Player 2 earns " + kuli[v1] + " point(s)."
       );
     else
       tempAlert(
@@ -282,24 +318,24 @@ function pasu() {
   }
   if (pasuCount1 > 0 && pasuCount2 == 0)
     tempAlertPasu(
-      "முதலாம் ஆட்டக்காரர் " + pasuCount1 + " பசுக்களைப் பெறுகிறார்.",
-      "Player 1 earns " + pasuCount1 + " Pasu(s)."
+      "மற்றும் முதலாம் ஆட்டக்காரர் " + pasuCount1 + " பசுக்களைப் பெறுகிறார்.",
+      "And Player 1 earns " + pasuCount1 + " Pasu(s)."
     );
   else if (pasuCount1 == 0 && pasuCount2 > 0)
     tempAlertPasu(
-      "இரண்டாம் ஆட்டக்காரர் " + pasuCount2 + " பசுக்களைப் பெறுகிறார்.",
-      "Player 2 earns " + pasuCount2 + " Pasu(s)."
+      "மற்றும் இரண்டாம் ஆட்டக்காரர் " + pasuCount2 + " பசுக்களைப் பெறுகிறார்.",
+      "And Player 2 earns " + pasuCount2 + " Pasu(s)."
     );
   else if (pasuCount1 > 0 && pasuCount2 > 0)
     tempAlertPasu(
-      "முதலாம் ஆட்டக்காரர் " +
+      "மற்றும் முதலாம் ஆட்டக்காரர் " +
         pasuCount1 +
-        " பசுக்களைப் பெறுகிறார்.\nஇரண்டாம் ஆட்டக்காரர் " +
+        " பசுக்களைப் பெறுகிறார்,\nஇரண்டாம் ஆட்டக்காரர் " +
         pasuCount2 +
         " பசுக்களைப் பெறுகிறார்.",
-      "Player 1 earns " +
+      "And Player 1 earns " +
         pasuCount1 +
-        " Pasu(s).\nPlayer 2 earns " +
+        " Pasu(s),\nPlayer 2 earns " +
         pasuCount2 +
         " Pasu(s)."
     );
@@ -363,17 +399,7 @@ function isEmpty() {
     addAll();
 }
 function addAll() {
-  for (i = 0; i < 7; i++) {
-    // adding elements in first row
-    p1Amount += kuli[i];
-    kuli[i] = 0;
-  }
-
-  for (i = 7; i < 14; i++) {
-    // adding elements in second row
-    p2Amount += kuli[i];
-    kuli[i] = 0;
-  }
+  collected = false;
   begin = false;
   document.getElementById("playbutton").classList = "fas fa-play";
   roundCount++;
@@ -389,10 +415,6 @@ function addAll() {
       (roundCount + 1) +
       "."
   );
-  for (i = 0; i < 14; i++) {
-    if (i < 7) document.getElementById("kuli" + (i + 1)).classList = "kuli1";
-    else document.getElementById("kuli" + (i + 1)).classList = "kuli2";
-  }
 }
 
 function game() {

@@ -25,32 +25,40 @@
   </head>
   <body>
     <center>
-      <table id="home" class="table" style="width: 80vw">
+      <table id="home" class="table" style="width: 75vw">
         <tr style="background-color: #0004; border: 0.5vw solid saddlebrown">
           <td id="board">
             <div id="play1" class="kuli1">
-              <span id="kuli2" onclick="select(1);">0</span>
-              <span id="kuli3" onclick="select(2);">0</span>
-              <span id="kuli4" onclick="select(3);">0</span>
-              <span id="kuli5" onclick="select(4);">0</span>
-              <span id="kuli6" onclick="select(5);">0</span><br />
-              <span id="kuli1" onclick="select(0);">0</span>
+              <div class="player text-left" style="padding-top: 0.5vw">P1</div>
+              <span id="kuli2" class="initial" onclick="select(1);">0</span>
+              <span id="kuli3" class="initial" onclick="select(2);">0</span>
+              <span id="kuli4" class="initial" onclick="select(3);">0</span>
+              <span id="kuli5" class="initial" onclick="select(4);">0</span>
+              <span id="kuli6" class="initial" onclick="select(5);">0</span>
+              <br />
+              <span id="kuli1" class="initial" onclick="select(0);">0</span>
               <p id="kuli15">0</p>
-              <span id="kuli7" onclick="select(6);">0</span>
+              <span id="kuli7" class="initial" onclick="select(6);">0</span>
             </div>
             <div id="play2" class="kuli2">
-              <span id="kuli14" onclick="select(13);">0</span>
+              <span id="kuli14" class="initial" onclick="select(13);">0</span>
               <p id="kuli16">0</p>
-              <span id="kuli8" onclick="select(7);">0</span><br />
-              <span id="kuli13" onclick="select(12);">0</span>
-              <span id="kuli12" onclick="select(11);">0</span>
-              <span id="kuli11" onclick="select(10);">0</span>
-              <span id="kuli10" onclick="select(9);">0</span>
-              <span id="kuli9" onclick="select(8);">0</span>
+              <span id="kuli8" class="initial" onclick="select(7);">0</span>
+              <br />
+              <span id="kuli13" class="initial" onclick="select(12);">0</span>
+              <span id="kuli12" class="initial" onclick="select(11);">0</span>
+              <span id="kuli11" class="initial" onclick="select(10);">0</span>
+              <span id="kuli10" class="initial" onclick="select(9);">0</span>
+              <span id="kuli9" class="initial" onclick="select(8);">0</span>
+              <div class="player text-right" style="padding-bottom: 0.5vw">
+                P2
+              </div>
             </div>
           </td>
           <td class="msgboard" style="width: 25vw">
-            <span id="titlebox" class="h3">Pallanguzhi</span><br />
+            <span id="titlebox" class="h3" style="font-size: 3vw"
+              >Pallanguzhi</span
+            ><br />
             <a onclick="start()">
               <i
                 id="playbutton"
